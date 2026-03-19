@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+body {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000000 100%);
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+    line-height: 1.5;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 100px;
+}
+.f {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+}
+.a-c {
+    align-items: center;
+}
+.f-r {
+    flex-direction: row;
+}
+.f-c {
+    flex-direction: column;
+}
+.d-f {
+    display: flex;
+}
+.sidebar {
+    width: 100%;
+    height: 60px;
+    background: none;
+    justify-content: center;
+    gap: 20px;
+}
+.logo {
+    width: 25px;
+}
+.sidebtn {
+    width: 150px;
+    height: 40px;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    transition: 0.3s;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.05);
+}
+.sidebtn:hover, .sidebtn.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.15), 
+        0 0 5px rgba(255, 255, 255, 0.05);
+}
+.main {
+    background: none;
+    width: 100%;
+    flex: 1;
+    padding-bottom: 20px;
+    min-height: 0;
+}
+.page {
+    background: none;
+    width: 100%;
+    flex-grow: 1;
+    gap: 10px;
+    min-height: 0;
+}
+.search-wrapper {
+    width: 100%;
+    height: auto;
+}
+#search {
+    width: 100%;
+    height: 40px;
+    padding: 0 15px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: white;
+    transition: 0.3s ease;
+}
+#search:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+#card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    background: none;
+    gap: 10px;
+    overflow-y: auto;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+.cards {
+    width: 100%;
+    height: max-content;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0; 
+    transform: translateY(-20px);
+    transition: all 0.4s ease;
+    justify-content: space-between;
+}
+.copydiv {
+    gap: 10px;
+}
+.cards:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.05);
+}
+.cards.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.text {
+    width: max-content;
+    height: max-content;
+    background: none;
+    align-items: flex-start;
+}
+.text1 {
+    color: blue;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+}
+.text2 {
+    color: white;
+    font-size: 15px;
+    white-space: pre-line;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+}
+.copybtn {
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 20px;
+    background: rgba(0, 122, 255, 0.02); 
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 122, 255, 0.4); 
+    border-top: 1px solid rgba(0, 150, 255, 0.8);
+    border-right: 1px solid rgba(0, 150, 255, 0.8);
+    color: rgba(0, 160, 255, 0.9);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    box-shadow: 0 0 10px rgba(0, 122, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.copybtn:hover {
+    background: rgba(0, 122, 255, 0.1); 
+    border-color: rgba(0, 150, 255, 0.9);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 122, 255, 0.4);
+}
+#card::-webkit-scrollbar {
+    width: 6px;
+}
+
+#card::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#card::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
